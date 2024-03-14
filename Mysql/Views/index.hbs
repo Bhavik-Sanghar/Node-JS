@@ -1,0 +1,65 @@
+<!-- views/index.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+</style>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    {{#if data}}
+        <table>
+            <!-- Table header -->
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <!-- Table body -->
+            <tbody>
+                {{#each data}}
+                    <tr>
+                        <td>{{EmployeeID}}</td>
+                        <td>{{FirstName}}</td>
+                        <td>{{LastName}}</td>
+                        <td>{{Age}}</td>
+                        <td>{{Department}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p>No data available.</p>
+    {{/if}}
+</body>
+</html>
