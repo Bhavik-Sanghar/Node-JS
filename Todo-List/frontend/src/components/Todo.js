@@ -1,6 +1,7 @@
 import axios from "axios"; 
 import React from "react"; 
 import { useEffect, useState } from "react"; 
+import "./Todo.css";
 
 function Todo() { 
 	const [todoList, setTodoList] = useState([]); 
