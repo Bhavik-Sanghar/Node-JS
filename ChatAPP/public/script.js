@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
             input.value = '';
         }
     });
-
     socket.on('chat message', function(data) {
         const { sender, message } = data;
         const item = document.createElement('li');
+    
         if (sender === username) {
             item.classList.add('sender');
             item.textContent = `You : ${message}`;
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
             item.textContent = `${sender}: ${message}`;
             audio.play();
         }
+    
         messages.appendChild(item);
         messages.scrollTop = messages.scrollHeight; // Scroll to bottom
-        
     });
 
     socket.on('user joined', function(user) {
