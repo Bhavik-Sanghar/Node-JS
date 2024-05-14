@@ -3,68 +3,63 @@
 
 /* General Styles */
 * {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Container */
 .container {
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 800px;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* Chat Window */
 .chat-window {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  background-image: url("https://source.unsplash.com/random/800x600/?nature");
-  background-size: cover;
-  background-position: center;
-  backdrop-filter: blur(5px);
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-image: url("https://source.unsplash.com/random/800x600/?nature");
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
 }
 
 #messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 #messages li {
-  margin-bottom: 20px;
-  max-width: 70%;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgb(87, 84, 84);
-
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Added semi-transparent white background */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added text shadow for better visibility */
+    margin-bottom: 20px;
+    max-width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(87, 84, 84);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 #messages li.sender {
     margin-right: 0;
-    margin-left: auto; /* Align sender messages to the right */
+    margin-left: auto;
     align-self: flex-end;
     background-color: #dcf8c6;
     text-align: right;
@@ -72,98 +67,132 @@ body {
 
 #messages li.receiver {
     margin-left: 0;
-    margin-right: auto; /* Align receiver messages to the left */
+    margin-right: auto;
     align-self: flex-start;
     background-color: #aaf4f8;
 }
 
 /* Message Form */
 .message-form {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
 }
 
 .message-form input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 15px;
-  border-radius: 30px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
 .message-form button {
-  margin-left: 20px;
-  padding: 15px 30px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
-  font-weight: 500;
+    margin-left: 20px;
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .message-form button:hover {
-  background-color: #3e8e41;
+    background-color: #3e8e41;
 }
 
 /* Name Popup */
 .popup {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popup-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 30px;
-  border: 1px solid #888;
-  width: 40%;
-  border-radius: 20px;
-  text-align: center;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .popup-content h2 {
-  margin-top: 0;
-  font-weight: 600;
-  font-size: 24px;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 .popup-content input {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .popup-content button {
-  padding: 15px 30px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
-  font-weight: 500;
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .popup-content button:hover {
-  background-color: #3e8e41;
+    background-color: #3e8e41;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 90%;
+    }
+
+    .popup-content {
+        width: 80%;
+        margin: 30% auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .message-form {
+        padding: 10px;
+    }
+
+    .message-form input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .message-form button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #messages li {
+        max-width: 80%;
+        padding: 10px;
+    }
 }

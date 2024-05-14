@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-console.log(path.join(__dirname, 'public'))
 
 io.on('connection', (socket) => {
     console.log('A user connected');
