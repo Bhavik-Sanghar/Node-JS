@@ -2,16 +2,24 @@
 require('dotenv').config();
 
 const mysql = require('mysql2');
+const fs = require('fs'); // Import the fs module
 
 
-const connection = mysql.createConnection({
+
+const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE
+    database: process.env.DB_DATABASE,
+    port: process.env.PORT,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: fs.readFileSync(__dirname + '/ca.pem')
+
+    }
 });
 
-connection.connect((err) => {
+db.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL:', err);
         return;
@@ -19,4 +27,4 @@ connection.connect((err) => {
     console.log('Connected to MySQL');
 });
 
-module.exports = connection;
+module.exports = db;

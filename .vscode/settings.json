@@ -13,6 +13,20 @@
             "database": "SIP",
             "username": "root",
             "password": "Bhavik@2272"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "mysql-4800a6b-bhaviksuiya222-61e4.e.aivencloud.com",
+            "port": 15742,
+            "driver": "MySQL",
+            "name": "Cloud",
+            "database": "defaultdb",
+            "username": "avnadmin",
+            "password": "AVNS_zMKoAeFtbyOlyhN2G5f"
         }
     ]
 }
