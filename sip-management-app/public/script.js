@@ -22,8 +22,16 @@ document.getElementById('sipForm').addEventListener('submit', function(event) {
     .then(data => {
         alert('Data inserted successfully');
         console.log(data);
+
+        // Reset the form
+        document.getElementById('sipForm').reset();
     })
     .catch((error) => {
         console.error('Error:', error);
     });
+});
+
+
+document.getElementById('showSIP').addEventListener('click', function() {
+    window.location.href = 'showSIP.html';
 });

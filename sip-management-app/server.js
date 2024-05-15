@@ -1,11 +1,10 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,7 +25,7 @@ app.post('/sip', (req, res) => {
 
 // Route to retrieve data
 app.get('/sip', (req, res) => {
-    const query = `SELECT * FROM SIPManagement`;
+    const query = `SELECT * FROM SIPManagement ORDER BY ValueDate ASC`;
     db.query(query, (err, results) => {
         if (err) {
             res.status(500).send('Error retrieving data');
