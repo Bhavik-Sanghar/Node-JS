@@ -4,13 +4,14 @@ const express = require('express')
 const mongoose = require('mongoose') 
 const cors = require('cors') 
 const TodoModel = require("./models/todoList") 
+require('dotenv').config();
+const port = process.env.PORT || 3001;
 
 var app = express(); 
 app.use(cors()); 
 app.use(express.json()); 
 
-// Connect to your MongoDB database (replace with your database URL) 
-mongoose.connect("mongodb://127.0.0.1/todo"); 
+mongoose.connect(process.env.MONGO_URI); 
 
 // Check for database connection errors 
 mongoose.connection.on("error", (error) => { 
@@ -56,6 +57,6 @@ app.delete("/deleteTodoList/:id", (req, res) => {
 		.catch((err) => res.json(err)); 
 }); 
 
-app.listen(3001, () => { 
+app.listen(port, () => { 
 	console.log('Server running on 3001'); 
 }); 
