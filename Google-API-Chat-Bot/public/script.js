@@ -1,15 +1,23 @@
+// Generate a unique user ID
 function generateUserId() {
     return 'user-' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
 document.getElementById('userId').value = generateUserId();
 
+// Handle 'Enter' key press to send the message
 function handleKeyDown(event) {
     if (event.key === 'Enter') {
         askBrainiac();
     }
 }
 
+// Determine the API URL based on the hostname
+const apiUrl = window.location.hostname === 'localhost'
+    ? 'http://localhost:3000/ask-brainiac'
+    : 'https://chat-bot-google-api.onrender.com/ask-brainiac';
+
+// Function to send user input to Brainiac and display the response
 async function askBrainiac() {
     const userId = document.getElementById('userId').value;
     const userInput = document.getElementById('userInput').value;
@@ -39,7 +47,7 @@ async function askBrainiac() {
     chatBox.appendChild(loadingMessageElement);
 
     try {
-        const response = await fetch('http://localhost:3000/ask-brainiac', {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
