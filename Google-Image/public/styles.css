@@ -1,0 +1,158 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container Styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6c63ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Form Styles */
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#imageInput {
+  padding: 0.5rem;
+  border: 2px dashed #6c63ff;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f5f5f5;
+  margin-bottom: 1rem;
+}
+
+#imageInput:hover {
+  background-color: #e0e0e0;
+}
+
+button[type="submit"] {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5b52e6;
+}
+
+/* Caption Result Styles */
+#captionResult {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#captionResult ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#captionResult li {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #5b52e6;
+}
+
+.copy-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #captionResult {
+    padding: 1.5rem;
+  }
+
+  #captionResult li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #captionResult {
+    padding: 1rem;
+  }
+
+  #captionResult li {
+    font-size: 0.9rem;
+  }
+
+  .copy-btn {
+    width: 25px;
+    height: 25px;
+  }
+
+  .copy-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
