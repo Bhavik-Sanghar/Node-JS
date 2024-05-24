@@ -8,8 +8,12 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
   const captionList = captionResult.querySelector('ul');
   captionList.innerHTML = '<li>Generating caption...</li>';
 
+  const apiUrl = window.location.hostname === 'localhost'
+    ? 'http://localhost:3000/generate-caption'
+    : 'https://captioncraft-9cyd.onrender.com/generate-caption';
+
   try {
-      const response = await fetch('/generate-caption', {
+      const response = await fetch(apiUrl, {
           method: 'POST',
           body: formData
       });
