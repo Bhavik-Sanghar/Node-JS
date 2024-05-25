@@ -18,6 +18,10 @@ mongoose.connection.on("error", (error) => {
 	console.error("MongoDB connection error:", error); 
 }); 
 
+mongoose.connection.once('open', () => {
+	console.log('Successfully connected to MongoDB!');
+  });
+
 // Get saved tasks from the database 
 app.get("/getTodoList", (req, res) => { 
 	TodoModel.find({}) 
