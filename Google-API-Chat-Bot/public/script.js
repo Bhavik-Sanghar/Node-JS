@@ -67,7 +67,10 @@ async function askBrainiac() {
         // Create a new response message element
         const responseMessageElement = document.createElement('div');
         responseMessageElement.className = 'message';
-        responseMessageElement.textContent = data;
+
+        // Convert markdown to HTML using the marked library
+        const markedContent = marked.parse(data);
+        responseMessageElement.innerHTML = markedContent;
 
         // Append the response message to the chat box
         chatBox.appendChild(responseMessageElement);
