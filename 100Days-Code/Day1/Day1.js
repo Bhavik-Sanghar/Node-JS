@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+
 fs.readFile("data.json", "utf-8", (err, jsonData) => {
     if (err) {
         console.error("Error reading file:", err);

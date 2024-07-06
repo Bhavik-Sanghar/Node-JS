@@ -4,6 +4,7 @@ const fs = require('fs');
 const csv = require('csv-parser');
 
 // Read the CSV file
+
 fs.createReadStream('data.csv')
   .pipe(csv())
   .on('data', (row) => {
