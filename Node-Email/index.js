@@ -23,3 +23,4 @@ require('dotenv').config();
       console.log('Email sent: ' + info.response);
     }
   });
+
